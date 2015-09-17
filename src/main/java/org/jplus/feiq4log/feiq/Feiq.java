@@ -14,6 +14,7 @@ import java.net.SocketException;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Timer;
+import java.util.Date;
 import java.util.TimerTask;
 
 /**
@@ -48,7 +49,7 @@ public class Feiq extends Thread {
                     }
                 }
             }
-        }, 500);
+        },new Date(), 500);
         IPMSGData messageBean=new IPMSGData(32,"飞秋日志系统已经启动,回复+查看系统日志","255.255.255.255");
         mq.add(messageBean);
     }
