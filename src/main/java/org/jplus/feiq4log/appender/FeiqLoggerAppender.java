@@ -3,12 +3,12 @@ package org.jplus.feiq4log.appender;
 import org.apache.log4j.Layout;
 import org.apache.log4j.spi.LoggingEvent;
 import org.jplus.feiq4log.feiq.Feiq;
-import org.jplus.feiq4log.feiq.IPMSGData;
 
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import org.jplus.jfeiq.feiq.IPMSGData;
 
 /**
  * Created by hyberbin on 15/9/13.
@@ -103,7 +103,7 @@ public class FeiqLoggerAppender extends org.apache.log4j.ConsoleAppender {
             String msgStr = msg.toString();
             for(Object user:users){
                 IPMSGData ipmsgData = new IPMSGData(32, msgStr,user.toString());
-                Feiq.sendMsg(ipmsgData);
+                feiq.getFeiqServer().sendMsg(ipmsgData);
             }
         }
         super.append(event);
