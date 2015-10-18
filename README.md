@@ -48,3 +48,20 @@
      输入-表示自己不再接收日志内容
 
      其他操作依此类推
+     
+4.程序依赖J-feiq
+https://github.com/hyberbin/J-Feiq.git
+```xml
+<dependencies>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>JFeiq</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+</dependencies>
+```
